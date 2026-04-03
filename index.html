@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iris - Center Camera Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Iris - Eye Tracking Demo</h1>
+    <p class="subtitle">
+      Look in a direction and hold for 1.5 seconds to select
+    </p>
+
+    <button id="startBtn" class="start-btn">Start Camera</button>
+    <p id="status" class="status">Waiting to start...</p>
+
+    <div class="demo-area">
+      <!-- Top Button -->
+      <button class="gaze-btn top-btn" data-value="Help" data-dir="up">Help</button>
+
+      <!-- Left Button -->
+      <button class="gaze-btn left-btn" data-value="Water" data-dir="left">Water</button>
+
+      <!-- Center Camera -->
+      <div class="camera-box">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <!-- Right Button -->
+      <button class="gaze-btn right-btn" data-value="Food" data-dir="right">Food</button>
+
+      <!-- Bottom Button -->
+      <button class="gaze-btn bottom-btn" data-value="Pain" data-dir="down">Pain</button>
+    </div>
+
+    <div class="output-box">
+      <h2>Output</h2>
+      <p id="output">No selection yet</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
