@@ -1,0 +1,76 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background: #07070f;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+}
+
+/* App wrapper */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.iris-header {
+  text-align: center;
+  padding: 2rem 1rem 0.5rem;
+}
+
+.iris-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #a78bfa;
+}
+
+.iris-subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* SOS Button */
+.sos-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #EF4444;
+  color: #ffffff;
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+}
+
+.sos-btn:hover {
+  background: #dc2626;
+}
+
+/* Output Panel */
+.output-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #111827;
+  border-top: 2px solid #1f2937;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.output-panel.waiting {
+  color: #4b5563;
+  font-style: italic;
+}
