@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iris — Eye Voice Bridge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <button class="sos-btn" onclick="triggerSOS()">
+    <span class="sos-pulse"></span>SOS
+  </button>
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-eye">
+        <div class="logo-iris"><div class="logo-pupil"></div></div>
+      </div>
+      <div class="logo-text">
+        <h1>IRIS</h1>
+        <p>Intent-Based Eye-Voice Bridge</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── START BUTTON + STATUS — separate from header ── -->
+  <div class="controls">
+    <button id="startBtn" class="start-btn">
+      <span class="btn-dot"></span>Start Eye Tracking
+    </button>
+    <p id="status" class="status">Press Start to begin</p>
+  </div>
+
+  <!-- ── MAIN GRID ── -->
+  <main class="grid">
+
+    <!-- TOP bubble -->
+    <div class="grid-top">
+      <button class="gaze-btn" data-value="help" data-dir="up">
+        <div class="bubble-ring"></div>
+        <div class="bubble-fill"></div>
+        <span class="bubble-icon">🙋</span>
+        <span class="bubble-label">Help</span>
+        <svg class="progress-svg" viewBox="0 0 180 180">
+          <circle class="progress-track" cx="90" cy="90" r="80"/>
+          <circle class="progress-fill" cx="90" cy="90" r="80" id="progress-up"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- MIDDLE ROW: Left + Camera + Right -->
+    <div class="grid-middle">
+
+      <!-- LEFT bubble -->
+      <button class="gaze-btn" data-value="water" data-dir="left">
+        <div class="bubble-ring"></div>
+        <div class="bubble-fill"></div>
+        <span class="bubble-icon">💧</span>
+        <span class="bubble-label">Water</span>
+        <svg class="progress-svg" viewBox="0 0 180 180">
+          <circle class="progress-track" cx="90" cy="90" r="80"/>
+          <circle class="progress-fill" cx="90" cy="90" r="80" id="progress-left"/>
+        </svg>
+      </button>
+
+      <!-- CAMERA CENTER -->
+      <div class="camera-wrap">
+        <div class="camera-box">
+          <video id="video" autoplay playsinline muted></video>
+          <canvas id="canvas"></canvas>
+          <div class="scan-line"></div>
+        </div>
+        <div class="camera-label">
+          <span class="rec-dot"></span>Eye Tracking
+        </div>
+      </div>
+
+      <!-- RIGHT bubble -->
+      <button class="gaze-btn" data-value="food" data-dir="right">
+        <div class="bubble-ring"></div>
+        <div class="bubble-fill"></div>
+        <span class="bubble-icon">🍽️</span>
+        <span class="bubble-label">Food</span>
+        <svg class="progress-svg" viewBox="0 0 180 180">
+          <circle class="progress-track" cx="90" cy="90" r="80"/>
+          <circle class="progress-fill" cx="90" cy="90" r="80" id="progress-right"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- BOTTOM bubble -->
+    <div class="grid-bottom">
+      <button class="gaze-btn" data-value="tired" data-dir="down">
+        <div class="bubble-ring"></div>
+        <div class="bubble-fill"></div>
+        <span class="bubble-icon">😴</span>
+        <span class="bubble-label">Tired</span>
+        <svg class="progress-svg" viewBox="0 0 180 180">
+          <circle class="progress-track" cx="90" cy="90" r="80"/>
+          <circle class="progress-fill" cx="90" cy="90" r="80" id="progress-down"/>
+        </svg>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ── OUTPUT PANEL ── -->
+  <div class="output-panel">
+    <span class="output-icon">👁️</span>
+    <p id="output">Waiting for gaze input...</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
