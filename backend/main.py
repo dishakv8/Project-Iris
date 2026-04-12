@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ── Import new Google Gemini library ──
-import google.generativeai as genai
+from google import genai
 
 # ── Setup client ──
 GEMINI_API_KEY = os.getenv("AIzaSyB9Vpn4YNb7ImaLmJXYI_W1PzuTP8J4fKs")
